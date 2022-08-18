@@ -1,9 +1,9 @@
-import 'package:dart_home_work/class.dart';
+import 'package:dart_home_work/model.dart';
 
 //mport 'class.dart';
 
 void main() {
-  final work21 = work2(24, 42);
-  print(work21.nodFunct().toString());
-  print(work21.nokFunct().toString());
+  final _workOne = WorkOne(24, 42);
+  print(_workOne.nodFunct().toString());
+  print(_workOne.nokFunct().toString());
 }

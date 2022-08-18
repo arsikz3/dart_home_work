@@ -1,15 +1,15 @@
-class work2 {
+class WorkOne {
   int num1;
   int num2;
 
-  work2(
+  WorkOne(
     this.num1,
     this.num2,
   );
 
   int nokFunct() {
     int nok;
-    nok = (num1 * num2 / nodFunct()).toInt();
+    nok = num1 * num2 ~/ nodFunct();
 
     return nok;
   }
