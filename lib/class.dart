@@ -8,10 +8,10 @@ class work2 {
   );
 
   int nokFunct() {
-    int res;
-    res = (num1 * num2 / nodFunct()).toInt();
+    int nok;
+    nok = (num1 * num2 / nodFunct()).toInt();
 
-    return res;
+    return nok;
   }
 
   int nodFunct() {
@@ -31,16 +31,11 @@ class work2 {
       }
     }
 
-    for (int i = 0;
-        i < nums1.length;
-        i++ /*int i = nums1.length; i > 0; i--*/) {
-      for (int j = 0;
-          j < nums2.length;
-          j++ /*int j = nums2.length; j > 0; j--*/) {
+    for (int i = 0; i < nums1.length; i++) {
+      for (int j = 0; j < nums2.length; j++) {
         if (nums1.elementAt(i) == nums2.elementAt(j)) {
           nod = nums1.elementAt(i);
         }
-        // break;
       }
     }
     return nod;
