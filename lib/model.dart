@@ -58,10 +58,11 @@ class WorkTwo {
 
     while (prmNumber != 0) {
       reminder = prmNumber % 2;
+      de.log(reminder.toString());
       binNum += reminder.toString();
       prmNumber = prmNumber ~/ 2;
     }
-    return binNum;
+    return binNum.split('').reversed.join('');
     //return binNum.split('').reversed.join(',');
   }
 
@@ -70,9 +71,9 @@ class WorkTwo {
     int x;
     for (int i = 0; i < _binarynum.length; i++) {
       x = int.parse(_binarynum[_binarynum.length - i - 1]);
-      de.log(x.toString() + ' i: ' + i.toString());
+      //de.log(x.toString() + '* 2 ^ ' + i.toString());
       sum += (x * pow(2, i)) as int;
-      de.log((x * pow(2, i)).toString());
+      //de.log((x * pow(2, i)).toString());
     }
 
     return sum;
