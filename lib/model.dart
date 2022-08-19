@@ -45,7 +45,7 @@ class WorkOne {
   }
 }
 
-//класс для задания 2.1
+//класс для задания 2.2
 class WorkTwo {
   // int decimalnum;
   // String binarynum;
