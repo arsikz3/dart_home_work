@@ -1,3 +1,6 @@
+import 'dart:math';
+import 'dart:developer' as de;
+
 class WorkOne {
   int num1;
   int num2;
@@ -39,6 +42,40 @@ class WorkOne {
       }
     }
     return nod;
+  }
+}
+
+//класс для задания 2.1
+class WorkTwo {
+  // int decimalnum;
+  // String binarynum;
+
+  //WorkTwo(this.binarynum, this.decimalnum);
+
+  String binaryFun(int prmNumber) {
+    int reminder = 0;
+    String binNum = '';
+
+    while (prmNumber != 0) {
+      reminder = prmNumber % 2;
+      binNum += reminder.toString();
+      prmNumber = prmNumber ~/ 2;
+    }
+    return binNum;
+    //return binNum.split('').reversed.join(',');
+  }
+
+  int decimalFun(String _binarynum) {
+    int sum = 0;
+    int x;
+    for (int i = 0; i < _binarynum.length; i++) {
+      x = int.parse(_binarynum[_binarynum.length - i - 1]);
+      de.log(x.toString() + ' i: ' + i.toString());
+      sum += (x * pow(2, i)) as int;
+      de.log((x * pow(2, i)).toString());
+    }
+
+    return sum;
   }
 }
 // TODO Implement this library.
