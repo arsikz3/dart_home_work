@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'dart:developer' as de;
 
+//класс для задания 2.1
 class WorkOne {
   int num1;
   int num2;
@@ -45,13 +46,8 @@ class WorkOne {
   }
 }
 
-//класс для задания 2.1
+//класс для задания 2.2
 class WorkTwo {
-  // int decimalnum;
-  // String binarynum;
-
-  //WorkTwo(this.binarynum, this.decimalnum);
-
   String binaryFun(int prmNumber) {
     int reminder = 0;
     String binNum = '';
