@@ -11,5 +11,5 @@ void main() {
   print('\nЗадание 2.2');
   final _workTwo = WorkTwo();
   print(_workTwo.binaryFun(34));
-  //print(_workTwo.decimalFun('10001'));
+  print(_workTwo.decimalFun('10001'));
 }
