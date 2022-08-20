@@ -11,4 +11,8 @@ void main() {
   print('Результат задания 2.3');
   final _workThree = WorkThree();
   print(_workThree.numsRes());
+
+  print('Результат задания 2.5');
+  final _workFive = WorkFive();
+  print(_workFive.wordToNumber());
 }

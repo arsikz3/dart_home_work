@@ -88,3 +88,31 @@ class WorkThree {
     return numList;
   }
 }
+
+class WorkFive {
+  List<String> words = ['one', 'two', 'three', 'cat', 'dog', 'home'];
+  List<int> numss = [];
+
+  Map<int, String> numbers = {
+    0: 'zero',
+    1: 'one',
+    2: 'two',
+    3: 'three',
+    4: 'four',
+    5: 'five',
+    6: 'six',
+    7: 'seven',
+    8: 'eight',
+    9: 'nine',
+  };
+
+  List<int> wordToNumber() {
+    numbers.forEach((key, value) {
+      if (words.contains(value)) {
+        numss.add(key);
+      }
+    });
+
+    return numss;
+  }
+}
