@@ -1,7 +1,6 @@
 import 'dart:math';
 import 'dart:developer' as de;
 
-//класс для задания 2.1
 class WorkOne {
   int num1;
   int num2;
@@ -46,7 +45,6 @@ class WorkOne {
   }
 }
 
-//класс для задания 2.2
 class WorkTwo {
   String binaryFun(int prmNumber) {
     int reminder = 0;
@@ -59,7 +57,6 @@ class WorkTwo {
       prmNumber = prmNumber ~/ 2;
     }
     return binNum.split('').reversed.join('');
-    //return binNum.split('').reversed.join(',');
   }
 
   int decimalFun(String _binarynum) {
@@ -67,12 +64,9 @@ class WorkTwo {
     int x;
     for (int i = 0; i < _binarynum.length; i++) {
       x = int.parse(_binarynum[_binarynum.length - i - 1]);
-      //de.log(x.toString() + '* 2 ^ ' + i.toString());
       sum += (x * pow(2, i)) as int;
-      //de.log((x * pow(2, i)).toString());
     }
 
     return sum;
   }
 }
-// TODO Implement this library.
