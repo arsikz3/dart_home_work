@@ -1,6 +1,8 @@
 import 'dart:math';
 import 'dart:developer' as de;
 
+typedef StringList = List<String>;
+
 class WorkOne {
   int num1;
   int num2;
@@ -52,7 +54,6 @@ class WorkTwo {
 
     while (prmNumber != 0) {
       reminder = prmNumber % 2;
-      de.log(reminder.toString());
       binNum += reminder.toString();
       prmNumber = prmNumber ~/ 2;
     }
@@ -68,5 +69,22 @@ class WorkTwo {
     }
 
     return sum;
+  }
+}
+
+class WorkThree {
+  String textForWork =
+      "Это сло один1, этотслово 2, еще есть другие слова 3456789 и ноль 0";
+  List<String> numbers = [];
+  StringList numList = [];
+
+  List<String> numsRes() {
+    for (int i = 0; i < textForWork.length; i++) {
+      if (textForWork[i].contains(RegExp(r'[0-9]'))) {
+        numList.add(textForWork[i]);
+      }
+    }
+
+    return numList;
   }
 }
