@@ -19,7 +19,7 @@ void main() {
 
   print('Результат задания 2.5');
   final _workFive = WorkFive();
-  print(_workFive.wordToNumber());
+  print(_workFive.wordToNumberR());
 
   print('Результат задания 2.7');
   num _workSeven = 729.0;

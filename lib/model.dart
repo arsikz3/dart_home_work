@@ -111,25 +111,26 @@ class WorkFive {
   List<int> numss = [];
   late Map<String, int> countWord;
 
-  Map<int, String> numbers = {
-    0: 'zero',
-    1: 'one',
-    2: 'two',
-    3: 'three',
-    4: 'four',
-    5: 'five',
-    6: 'six',
-    7: 'seven',
-    8: 'eight',
-    9: 'nine',
+  Map<String, int> numbers = {
+    'zero': 0,
+    'one': 1,
+    'two': 2,
+    'three': 3,
+    'four': 4,
+    'five': 5,
+    'six': 6,
+    'seven': 7,
+    'eight': 8,
+    'nine': 9,
   };
 
-  List<int> wordToNumber() {
-    numbers.forEach((key, value) {
-      if (words.contains(value)) {
-        numss.add(key);
+  List<int> wordToNumberR() {
+    for (var key in words) {
+      if (numbers.containsKey(key) && (numbers[key] != null)) {
+        int? _elem = numbers[key];
+        numss.add(_elem!);
       }
-    });
+    }
 
     return numss;
   }
