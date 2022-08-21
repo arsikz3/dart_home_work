@@ -116,3 +116,34 @@ class WorkFive {
     return numss;
   }
 }
+
+/*
+extension  on num {
+  num sqrtmy(int number) {
+    double t;
+    double squareRoot = number / 2;
+    do {
+      t = squareRoot;
+      squareRoot = (t + (number / t)) / 2;
+    } while ((t - squareRoot) != 0);
+    return squareRoot;
+  }
+}
+*/
+extension WorkSeven on num {
+  num findNumberRoot(_root) {
+    double x, pw;
+    double xprev = 1;
+    double _number = toDouble();
+    x = _number;
+    while ((xprev - x).abs() > 1.0e-10) {
+      xprev = x;
+      pw = 1;
+      for (int i = 0; i < (_root - 1); i++) {
+        pw *= xprev;
+      }
+      x = 1.0 / _root * ((_root - 1) * xprev + _number / pw);
+    }
+    return x;
+  }
+}
