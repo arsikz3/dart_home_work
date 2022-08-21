@@ -89,9 +89,27 @@ class WorkThree {
   }
 }
 
+class WorkFour {
+  Map<String, int> wordCounts = <String, int>{};
+
+  Map<String, int> result(StringList wordList) {
+    for (int i = 0; i < wordList.length; i++) {
+      if (wordCounts.containsKey(wordList[i])) {
+        var _curval = wordCounts[wordList[i]];
+        wordCounts[wordList[i]] = _curval != null ? _curval.toInt() + 1 : 1;
+      } else {
+        final _elem = <String, int>{wordList[i]: 1};
+        wordCounts.addAll(_elem);
+      }
+    }
+    return wordCounts;
+  }
+}
+
 class WorkFive {
   List<String> words = ['one', 'two', 'three', 'cat', 'dog', 'home'];
   List<int> numss = [];
+  late Map<String, int> countWord;
 
   Map<int, String> numbers = {
     0: 'zero',

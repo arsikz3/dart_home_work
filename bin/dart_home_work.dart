@@ -12,6 +12,11 @@ void main() {
   final _workThree = WorkThree();
   print(_workThree.numsRes());
 
+  print('Результат задания 2.4');
+
+  final _wordCounts = WorkFour();
+  print(_wordCounts.result(['cat', 'dog', 'dog', 'fish', 'dog']));
+
   print('Результат задания 2.5');
   final _workFive = WorkFive();
   print(_workFive.wordToNumber());
