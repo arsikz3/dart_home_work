@@ -15,4 +15,8 @@ void main() {
   print('Результат задания 2.5');
   final _workFive = WorkFive();
   print(_workFive.wordToNumber());
+
+  print('Результат задания 2.7');
+  num _workSeven = 729.0;
+  print(_workSeven.findNumberRoot(3).toString());
 }
