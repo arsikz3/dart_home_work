@@ -117,19 +117,6 @@ class WorkFive {
   }
 }
 
-/*
-extension  on num {
-  num sqrtmy(int number) {
-    double t;
-    double squareRoot = number / 2;
-    do {
-      t = squareRoot;
-      squareRoot = (t + (number / t)) / 2;
-    } while ((t - squareRoot) != 0);
-    return squareRoot;
-  }
-}
-*/
 extension WorkSeven on num {
   num findNumberRoot(_root) {
     double x, pw;
