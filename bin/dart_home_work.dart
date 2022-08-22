@@ -21,6 +21,24 @@ void main() {
   final _workFive = WorkFive();
   print(_workFive.wordToNumberR());
 
+  print('Результат задания 2.6');
+  Point pointOne = Point(1, 2, 3);
+  Point pointStart = Point.one();
+  Point pointTwo = Point(-7, -2, 4);
+  Point pointZero = Point.zero();
+  Point pointThre = Point(3, 3, 3);
+  pointZero.initialize;
+  print('${pointOne.distanceTo(pointTwo)}');
+  print('${pointZero.distanceTo(pointThre)}');
+
+  Point pointA = Point.zero();
+  Point pointB = Point(2, 0, 0);
+  Point pointC = Point(0, 2, 0);
+  print('${pointA.distanceTo(pointB)}');
+  print('${pointA.distanceTo(pointC)}');
+
+  print(pointThre.getArround(pointA, pointB, pointC).toString());
+
   print('Результат задания 2.7');
   num _workSeven = 729.0;
   print(_workSeven.findNumberRoot(3).toString());

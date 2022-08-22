@@ -1,3 +1,4 @@
+import 'dart:ffi';
 import 'dart:math';
 import 'dart:developer' as de;
 
@@ -136,6 +137,46 @@ class WorkFive {
   }
 }
 
+class Point /*WorkSix*/ {
+  double x, y, z;
+
+  Point(this.x, this.y, this.z);
+
+  void initialize() {
+    x = 0;
+    y = 0;
+    z = 0;
+  }
+
+  double distanceTo(Point another) {
+    return sqrt(
+        pow(another.x - x, 2) + pow(another.y - y, 2) + pow(another.z - z, 2));
+  }
+
+  factory Point.zero() {
+    return Point(0, 0, 0);
+  }
+
+  factory Point.one() {
+    return Point(1, 1, 2);
+  }
+
+  double getArround(Point pointOne, Point pointTwo, Point pointThree) {
+    double pperim = pointOne.pp(pointTwo, pointThree);
+    return sqrt(pperim *
+        (pperim - pointOne.distanceTo(pointThree)) *
+        (pperim - pointOne.distanceTo(pointTwo)) *
+        (pperim - pointThree.distanceTo(pointTwo)));
+  }
+
+  double pp(Point twoPoint, Point threePoint) {
+    double lineOne = distanceTo(twoPoint);
+    double lineTwo = distanceTo(threePoint);
+    double lineThree = twoPoint.distanceTo(threePoint);
+    return (lineOne + lineTwo + lineThree) / 2;
+  }
+}
+
 extension WorkSeven on num {
   num findNumberRoot(_root) {
     double x, pw;
@@ -165,34 +206,10 @@ mixin GetMailSystem on User {
   //User user = User('admin@mail.ru');
   String domen = 'не найден';
   String get getmailSystem {
-    /*
-    for (int i = 0; i < email.length; i++) {
-      if (email[i] == '@') {
-        domen = email.substring(i + 1, email.length);
-      }
-    }
-    */
     domen = email.split('@')[1];
     return domen;
   }
 }
-
-/*
-mixin GetMailSystem2 {
-  UserManager userManager = UserManager();
-  var founded2;
-  String getmailSystem2() {
-    for (int i = 0; i < userManager.personsEmails.length; i++) {
-      if (userManager.personsEmails[i].contains('admin')) {
-        founded2 = userManager.personsEmails[i]
-            .substring(5, userManager.personsEmails[i].length);
-      }
-    }
-
-    return founded2;
-  }
-}
-*/
 
 class AdminUser extends User with GetMailSystem {
   AdminUser(String name, String email) : super(name, email);
@@ -209,17 +226,11 @@ class UserManager<T extends User> {
 
   void removeUser(T user) => personsEmails.remove(user);
   void getUserList() {
-    // Метод отображения списка пользователей в репозитории
     for (var e in personsEmails) {
-      // Проход по списку пользователей
       if (e.name == 'admin') {
-        // Если тип записи AdminUser
-        // ignore: avoid_print
-        print(
-            (e as AdminUser).getmailSystem); // Песатем Имя и домен через миксин
+        print((e as AdminUser).getmailSystem);
       } else {
-        // ignore: avoid_print
-        print(e.email); // Инфче печатаем Имя и Почту
+        print(e.email);
       }
     }
   }
