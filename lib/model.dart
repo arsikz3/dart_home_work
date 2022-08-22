@@ -153,3 +153,74 @@ extension WorkSeven on num {
     return x;
   }
 }
+
+class User {
+  String name;
+  String email;
+
+  User(this.name, this.email);
+}
+
+mixin GetMailSystem on User {
+  //User user = User('admin@mail.ru');
+  String domen = 'не найден';
+  String get getmailSystem {
+    /*
+    for (int i = 0; i < email.length; i++) {
+      if (email[i] == '@') {
+        domen = email.substring(i + 1, email.length);
+      }
+    }
+    */
+    domen = email.split('@')[1];
+    return domen;
+  }
+}
+
+/*
+mixin GetMailSystem2 {
+  UserManager userManager = UserManager();
+  var founded2;
+  String getmailSystem2() {
+    for (int i = 0; i < userManager.personsEmails.length; i++) {
+      if (userManager.personsEmails[i].contains('admin')) {
+        founded2 = userManager.personsEmails[i]
+            .substring(5, userManager.personsEmails[i].length);
+      }
+    }
+
+    return founded2;
+  }
+}
+*/
+
+class AdminUser extends User with GetMailSystem {
+  AdminUser(String name, String email) : super(name, email);
+}
+
+class UserManager<T extends User> {
+  List<T> personsEmails = [];
+
+  List<String> sortedUsersEmails = [];
+
+  //String email;
+
+  void addUser(T user) => personsEmails.add(user);
+
+  void removeUser(T user) => personsEmails.remove(user);
+  void getUserList() {
+    // Метод отображения списка пользователей в репозитории
+    for (var e in personsEmails) {
+      // Проход по списку пользователей
+      if (e.name == 'admin') {
+        // Если тип записи AdminUser
+        // ignore: avoid_print
+        print(
+            (e as AdminUser).getmailSystem); // Песатем Имя и домен через миксин
+      } else {
+        // ignore: avoid_print
+        print(e.email); // Инфче печатаем Имя и Почту
+      }
+    }
+  }
+}
